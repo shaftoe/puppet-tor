@@ -2,7 +2,7 @@
 class tor::package () {
 
   $ensure = $::tor::ensure ? {
-    present => present,
+    present => latest,
     default => purged
   }
 

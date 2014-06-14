@@ -1,19 +1,21 @@
 # == Class: tor
 class tor (
-  $ensure      = present,
-  $unix_user   = 'debian-tor',
-  $fingerprint = undef,
-  $nickname    = undef,
-  $contact     = undef,
-  $exit_policy = undef
+  $ensure          = present,
+  $orport          = 9001,
+  $dirport         = 0,
+  $nickname        = undef,
+  $contact         = undef,
+  $exit_relay      = false,
+  $enable_apt_repo = false,
+  $custom_config   = []
   ) {
 
-  include 'tor::user'
+  include 'tor::apt'
   include 'tor::package'
   include 'tor::config'
   include 'tor::service'
 
-  Class['tor::user']    ->
+  Class['tor::apt']     ->
   Class['tor::package'] ->
   Class['tor::config']  ~>
   Class['tor::service']

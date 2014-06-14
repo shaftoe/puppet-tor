@@ -1,10 +1,14 @@
-ORPort 9001
+ORPort <%= @orport %>
+DirPort <%= @dirport %>
 <% if @nickname != nil -%>
 Nickname <%= @nickname %>
 <% end -%>
 <% if @contact != nil -%>
 ContactInfo <%= @contact %>
 <% end -%>
-<% if @exit_policy != nil -%>
-ExitPolicy <%= @exit_policy %>
+<% if ! @exit_relay -%>
+ExitPolicy reject *:*
+<% end -%>
+<% @custom_config.each do |conf| -%>
+<%= conf %>
 <% end -%>
