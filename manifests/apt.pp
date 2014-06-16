@@ -12,7 +12,7 @@ class tor::apt () {
       location          => 'http://deb.torproject.org/torproject.org',
       release           => $::lsbdistcodename,
       repos             => 'main',
-      key               => '886DDD89',
+      key               => 'A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89',
       key_server        => 'keys.gnupg.net',
     } ->
     package {'deb.torproject.org-keyring': ensure => $::tor::ensure}
