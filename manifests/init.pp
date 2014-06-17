@@ -1,4 +1,32 @@
 # == Class: tor
+# Install a Tor relay
+#
+# === Parameters
+# [*ensure*]
+#   If absent, it will remove packages and files. Default: present
+#
+# [*orport*]
+#   ORPort. Default: 9001
+#
+# [*dirport*]
+#   DirPort. Default: 0 (directory services disabled)
+#
+# [*nickname*]
+#   Advertised nickname for the relay. Default: undef
+#
+# [*contact*]
+#   Contact information for the relay. Default: undef
+#
+# [*exit_relay*]
+#   Use default Exit policies. Default: false (i.e. Exit Polices reject *:*)
+#
+# [*enable_apt_repo*]
+#   Use Tor APT repository. Default: false
+#
+# [*custom_config*]
+#   Array of custom config lines for torrc. Default: []
+#
+
 class tor (
   $ensure          = present,
   $orport          = 9001,

@@ -6,6 +6,12 @@ class tor::package () {
     default => purged
   }
 
-  package {['tor', 'torsocks']: ensure => $ensure }
+  $packages = [
+    'tor',
+    'torsocks',
+    'tor-geoipdb',
+  ]
+
+  package {$packages: ensure => $ensure }
 
 }
