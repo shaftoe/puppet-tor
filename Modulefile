@@ -8,4 +8,4 @@ description 'Tor Relay Module for Puppet'
 project_page 'https://github.com/shaftoe/puppet-tor'
 
 ## Add dependencies, if any:
-dependency 'puppetlabs/apt', '>= 1.4.2'
+dependency 'puppetlabs/apt', '1.4.2'
