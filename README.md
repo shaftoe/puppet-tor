@@ -67,7 +67,7 @@ class {'tor':
 
 If you want it to be an exit relay, you have a few default options.
 
-You can use reduces exit policies as suggested [here](https://trac.torproject.org/projects/tor/wiki/doc/ReducedExitPolicy)
+You can use reduced exit policies as suggested [here](https://trac.torproject.org/projects/tor/wiki/doc/ReducedExitPolicy)
 
  ```puppet
 class {'tor':
