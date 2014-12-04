@@ -1,0 +1,20 @@
+{
+  "name": "fortin-tor",
+  "version": "0.1.0",
+  "author": "Alexander Fortin",
+  "license": "Licensed under (Apache 2.0)",
+  "summary": "Tor relay",
+  "source": "https://github.com/shaftoe/puppet-tor",
+  "project_page": "https://github.com/shaftoe/puppet-tor",
+  "issues_url": "https://github.com/shaftoe/puppet-tor/issues",
+  "tags": ["tor", "tor-client"],
+  "operatingsystem_support": [
+    {
+    "operatingsystem":"Debian",
+    "operatingsystemrelease":[ "7.0" ]
+    }
+   ],
+  "dependencies": [
+    { "name": "puppetlabs/apt", "version_requirement": "1.4.2" }
+  ]
+}
