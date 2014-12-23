@@ -11,7 +11,7 @@ class tor::apt () {
 
     # Declare apt::key only if installing (to avoid double removal)
     if $ensure == 'present' {
-      apt::key {'A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89':
+      apt::key {'EE8CBC9E886DDD89':
         key_server => 'keys.gnupg.net',
         before     => Apt::Source['tor'],
       }
