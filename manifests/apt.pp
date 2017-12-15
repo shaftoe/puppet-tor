@@ -9,18 +9,15 @@ class tor::apt () {
 
     include 'apt'
 
-    # Declare apt::key only if installing (to avoid double removal)
-    if $ensure == 'present' {
-      apt::key {'A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89':
-        key_server => 'keys.gnupg.net',
-        before     => Apt::Source['tor'],
-      }
-    }
     apt::source { 'tor':
-      ensure            => $ensure,
-      location          => 'http://deb.torproject.org/torproject.org',
-      release           => $::lsbdistcodename,
-      repos             => 'main',
+      ensure   => $ensure,
+      location => 'http://deb.torproject.org/torproject.org',
+      release  => $::lsbdistcodename,
+      repos    => 'main',
+      key      => {
+        id     => 'A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89',
+        server => 'keys.gnupg.net',
+      }
     } ->
     package {'deb.torproject.org-keyring': ensure => $ensure}
   }
